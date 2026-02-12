@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Tanya ❤️</title>
+
+<style>
+body{
+  margin:0;
+  overflow:hidden;
+  background: radial-gradient(circle at bottom, #020111, #000);
+  font-family: "Segoe UI", Arial, sans-serif;
+  color:white;
+}
+
+/* Stars */
+.star{
+  position:absolute;
+  width:2px;
+  height:2px;
+  background:white;
+  opacity:.9;
+  animation: twinkle 2s infinite alternate;
+}
+@keyframes twinkle{
+  from{opacity:.3;}
+  to{opacity:1;}
+}
+
+/* Tanya name */
+#name{
+  position:absolute;
+  top:18%;
+  width:100%;
+  text-align:center;
+  font-size:48px;
+  font-weight:800;
+  color:#ff2e9b;
+  text-shadow:0 0 10px #000, 0 0 25px #ff2e9b;
+  transition: opacity 2s;
+}
+
+/* Center glowing circle */
+#circle{
+  position:absolute;
+  top:50%;
+  left:50%;
+  width:0;
+  height:0;
+  border-radius:50%;
+  background: radial-gradient(circle, #ff2e9b, transparent 70%);
+  transform:translate(-50%,-50%);
+  animation: openCircle 4s forwards;
+}
+@keyframes openCircle{
+  to{width:260px;height:260px;}
+}
+
+/* Message */
+#msg{
+  position:absolute;
+  top:55%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  width:85%;
+  text-align:center;
+  font-size:19px;
+  font-weight:600;
+  color:#ffffff;
+  text-shadow:0 0 8px #000, 0 0 15px #000;
+  opacity:0;
+  line-height:1.6;
+  transition: opacity 2s;
+}
+
+/* Red warning */
+.red{
+  color:#ff3b3b;
+  font-weight:800;
+}
+
+/* Final line */
+#final{
+  position:absolute;
+  bottom:40px;
+  width:100%;
+  text-align:center;
+  font-size:22px;
+  font-weight:700;
+  color:#ffd6f5;
+  text-shadow:0 0 10px #000, 0 0 20px #ff2e9b;
+  opacity:0;
+  transition: opacity 2s;
+}
+</style>
+</head>
+
+<body>
+
+<div id="name">Tanya ✨</div>
+<div id="circle"></div>
+
+<div id="msg">
+<span class="red">⚠️ Warning:</span><br>
+I’m currently <i>"debt collecting"</i> all the hugs I'm missing…<br><br>
+When I finally see you, I might not let go  
+until my shirt smells exactly like you.  
+That’s my favorite way to carry you everywhere. 🤍<br><br>
+<b>Happy Hug Day ❤️</b>
+</div>
+
+<div id="final">Aami-o tomay khub bhalo bashi 😂</div>
+
+<script>
+/* stars */
+for(let i=0;i<80;i++){
+  let s=document.createElement("div");
+  s.className="star";
+  s.style.left=Math.random()*100+"vw";
+  s.style.top=Math.random()*100+"vh";
+  s.style.animationDuration=(1+Math.random()*2)+"s";
+  document.body.appendChild(s);
+}
+
+/* TIMELINE */
+setTimeout(()=>{
+  document.getElementById("name").style.opacity=0;   // Tanya fade out
+  document.getElementById("msg").style.opacity=1;    // message fade in
+},4000);
+
+setTimeout(()=>{
+  document.getElementById("final").style.opacity=1;  // final line
+},9000);
+</script>
+
+</body>
+</html>
